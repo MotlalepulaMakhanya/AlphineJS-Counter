@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter Widget with AlpineJS</title>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
+</head>
+
+<body>
+    <div x-data="{ count: 0 }">
+        <h1>Counter</h1>
+        <div class="counter" x-text="count"></div>
+        <div>
+            <button @click="count++">+</button>
+            <button @click="count--">-</button>
+        </div>
+    </div>
+</body>
+
+</html>
