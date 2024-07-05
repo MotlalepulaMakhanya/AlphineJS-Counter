@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<<<<<<< HEAD
 <html>
 
 <head>
@@ -11,20 +10,19 @@
     <script src="script.js" defer></script>
 
     <!-- Greet Function -->
-    <h2>Greet Function</h2>
+    <h2>Greet Function Widget</h2>
     <input type="text" id="neighborName" placeholder="Enter neighbor's name">
     <select id="language">
         <option value="en">English</option>
-        <option value="es">Spanish</option>
+        <option value="se">Sesotho</option>
+        <option value="ts">Tsotsitaal</option>
         <option value="fr">French</option>
-        <option value="de">German</option>
-        <option value="it">Italian</option>
     </select>
     <button onclick="displayGreeting()">Greet</button>
     <p id="greeting"></p>
 
     <!-- Transport Fee Function -->
-    <h2>Transport Fee</h2>
+    <h2>Transport Fee Widget</h2>
     <form>
         <label><input type="radio" name="shift" value="morning" onclick="showTransportFee('morning')">
             Morning</label><br>
@@ -33,77 +31,27 @@
         <label><input type="radio" name="shift" value="night" onclick="showTransportFee('night')"> Night</label><br>
     </form>
     <p id="feeDisplay"></p>
-
-    <!-- Total Phone Bill Function -->
-    <h2>Total Phone Bill</h2>
+    <!-- Total Phone Bill Widget -->
+    <h2>Total Phone Bill Widget</h2>
     <input type="text" id="phoneString" placeholder="Enter phone usage string">
     <button onclick="displayTotalPhoneBill()">Calculate Total Bill</button>
-    <p id="totalBill"></p>
-    <!-- Enough Airtime Function -->
-    <h2>Enough Airtime</h2>
-    <input type="text" id="usageString" placeholder="Enter usage string">
+    <p id="totalBill">Total Phone Bill: R0.00</p>
+
+    <!-- Enough Airtime Widget -->
+    <h2>Enough Airtime Widget</h2>
     <input type="number" id="availableAirtime" placeholder="Enter available airtime">
+    <input type="text" id="usageString" placeholder="Enter usage string"> <!-- Changed from number to text -->
     <button onclick="displayEnoughAirtime()">Check Airtime</button>
-    <p id="result"></p>
+    <p id="result">Remaining Airtime: R0.00</p>
+
+    <h2>Word Game Widget</h2>
+    <label for="sentenceInput">Enter a sentence:</label>
+    <input type="text" id="sentenceInput" placeholder="Enter your sentence">
+    <button onclick="processSentence()">Process Sentence</button>
+    <h3>Results:</h3>
+    <p>Longest Word: <span id="longestWord"></span></p>
+    <p>Shortest Word: <span id="shortestWord"></span></p>
+    <p>Word Lengths: <span id="wordLengths"></span></p>
 </body>
 
-=======
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Counter Widgets</title>
-</head>
-
-<body>
-    <h1 class="block">Counter Widgets</h1>
-    <div class="one">
-        <a href="plain_dom.html">Get my plain DOM counter</a>
-    </div>
-    <div class="two">
-        <a href="alphine.html">Get my AlpineJS counter</a>
-    </div>
-    <style>
-        body {
-        background-image: url(widgets.webp);
-        font-family: Arial, sans-serif;
-        background-size: cover;
-        background-repeat: no-repeat;
-        margin: 0;
-        padding: 0;
-        }
-
-        h1 {
-        background-color: #e1e7eb;
-        text-align: center;
-        font-size: 40px;
-        padding: 20px 0;
-
-        }
-
-
-        .one {
-        background-color: gold;
-        margin: 1em;
-        border: red;
-        border-radius: 1em;
-        border-width: 100%;
-        font-size: 18px;
-
-        }
-
-        .two {
-        background-color: greenyellow;
-        margin: 1em;
-        border: red;
-        border-radius: 1em;
-        border-width: 100%;
-        font-size: 18px;
-
-
-        }
-    </style>
-</body>
->>>>>>> a67ab9bdd2db255e3c2520bca6280b3ef98af766
 </html>

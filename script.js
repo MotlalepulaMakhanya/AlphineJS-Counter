@@ -2,11 +2,9 @@
 function greet(neighborsName, language) {
     const greetings = {
         'en': 'Hello',
-        'es': 'Hola',
+        'se': 'Dumela',
         'fr': 'Bonjour',
-        'de': 'Hallo',
-        'it': 'Ciao',
-        // Add more languages as needed
+        'ts': 'Awe',
     };
     return `${greetings[language] || greetings['en']}, ${neighborsName}!`;
 }
@@ -26,55 +24,69 @@ function showTransportFee(shift) {
     };
     document.getElementById('feeDisplay').innerText = 'Transport Fee: R' + fees[shift];
 }
-
-// Total Phone Bill Function
 function totalPhoneBill(data) {
-    const items = data.split(', ');
+    const items = data.split(','); // Split the input string into an array
     let callCount = 0;
     let smsCount = 0;
     for (let i = 0; i < items.length; i++) {
-        if (items[i] === 'call') {
+        const item = items[i].trim(); // Trim the input to remove any whitespace
+        if (item === 'call') {
             callCount++;
-        } else if (items[i] === 'sms') {
+        } else if (item === 'sms') {
             smsCount++;
         }
     }
     const totalCost = (callCount * 2.75) + (smsCount * 0.65);
-    return 'R' + totalCost.toFixed(2);
+    return totalCost.toFixed(2);
 }
 
 function displayTotalPhoneBill() {
     const data = document.getElementById('phoneString').value;
     const bill = totalPhoneBill(data);
-    document.getElementById('totalBill').innerText = 'Total Phone Bill: ' + bill;
+    document.getElementById('totalBill').innerText = 'Total Phone Bill: R' + bill;
 }
 
-// Example usage for testing
-document.addEventListener("DOMContentLoaded", function() {
-    var exampleData = 'call, sms, call, sms, sms';
-    var exampleBill = totalPhoneBill(exampleData);
-    console.log(exampleBill); // Output: R8.15
-});
-// Enough Airtime Function
 function enoughAirtime(usage, availableAirtime) {
-    const items = usage.split(', ');
+    const items = usage.split(','); // Split the input string into an array
     let callCount = 0;
     let smsCount = 0;
     for (let i = 0; i < items.length; i++) {
-        if (items[i] === 'call') {
+        const item = items[i].trim(); // Trim the input to remove any whitespace
+        if (item === 'call') {
             callCount++;
-        } else if (items[i] === 'sms') {
+        } else if (item === 'sms') {
             smsCount++;
         }
     }
     const totalCost = (callCount * 2.75) + (smsCount * 0.65);
     const remainingAirtime = availableAirtime - totalCost;
-    return 'Remaining Airtime: R' + remainingAirtime.toFixed(2);
+    return remainingAirtime.toFixed(2);
 }
 
 function displayEnoughAirtime() {
-    const usage = document.getElementById('usageString').value;
     const availableAirtime = parseFloat(document.getElementById('availableAirtime').value);
+    const usage = document.getElementById('usageString').value;
     const result = enoughAirtime(usage, availableAirtime);
-    document.getElementById('result').innerText = result;
+    document.getElementById('result').innerText = 'Remaining Airtime: R' + result;
+}
+
+// Function to process the sentence and update results
+function processSentence() {
+    const sentence = document.getElementById('sentenceInput').value;
+    const words = sentence.split(' ');
+    let longestWord = '';
+    let shortestWord = words[0];
+
+    words.forEach(word => {
+        if (word.length > longestWord.length) {
+            longestWord = word;
+        }
+        if (word.length < shortestWord.length) {
+            shortestWord = word;
+        }
+    });
+    const wordLengths = words.map(word => `${word} (${word.length})`).join(', ');
+    document.getElementById('longestWord').innerText = longestWord;
+    document.getElementById('shortestWord').innerText = shortestWord;
+    document.getElementById('wordLengths').innerText = wordLengths;
 }
